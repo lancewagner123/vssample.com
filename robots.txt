@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /vssample.com/
+Sitemap: https://lancewagner123.github.io/vssample.com/sitemap.xml

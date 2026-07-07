@@ -397,6 +397,11 @@ h3 {
   text-wrap: balance;
 }
 
+h1.lead {
+  line-height: 1.18;
+  text-shadow: none;
+}
+
 .hero-copy {
   max-width: 680px;
   margin: 0 auto 1.7rem;
