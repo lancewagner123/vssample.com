@@ -928,11 +928,12 @@ figcaption {
 
   .nav-links {
     width: 100%;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 0;
     overflow: visible;
     padding: 0.05rem 0 0.2rem;
     font-size: 0.74rem;
+    row-gap: 0.12rem;
   }
 
   .nav-links > a,
