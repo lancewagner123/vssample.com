@@ -125,11 +125,11 @@ a {
 
 .brand-logo {
   display: block;
-  width: clamp(176px, 18vw, 252px);
-  height: 58px;
+  width: clamp(216px, 20vw, 260px);
+  height: 72px;
   object-fit: contain;
   object-position: left center;
-  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.68));
+  filter: drop-shadow(0 0 7px rgba(241, 223, 160, 0.14));
 }
 
 .brand strong,
