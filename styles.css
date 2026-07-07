@@ -365,6 +365,8 @@ h3 {
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1.04;
   letter-spacing: 0;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 h1 {
@@ -388,6 +390,7 @@ h3 {
   color: var(--gold-soft);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.4rem, 3.2vw, 2.4rem);
+  text-wrap: balance;
 }
 
 .hero-copy {
@@ -395,6 +398,7 @@ h3 {
   margin: 0 auto 1.7rem;
   color: var(--muted);
   font-size: clamp(1rem, 2vw, 1.18rem);
+  text-wrap: pretty;
 }
 
 .hero-actions {
@@ -782,15 +786,35 @@ figcaption {
 @media (max-width: 900px) {
   .nav {
     min-height: auto;
-    padding: 0.9rem 0;
+    width: min(var(--max), calc(100% - 24px));
+    padding: 0.85rem 0;
     align-items: flex-start;
     flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .brand {
+    width: 100%;
   }
 
   .nav-links {
     width: 100%;
     justify-content: flex-start;
     flex-wrap: wrap;
+    font-size: 0.88rem;
+    row-gap: 0.5rem;
+  }
+
+  .nav-links > a:not(:first-child),
+  .nav-links > .nav-dropdown:not(:first-child) {
+    margin-left: 0.62rem;
+    padding-left: 0.78rem;
+  }
+
+  .nav-links > a:not(:first-child)::before,
+  .nav-links > .nav-dropdown:not(:first-child)::before {
+    width: 0.24rem;
+    height: 0.24rem;
   }
 
   .nav-actions {
@@ -816,10 +840,11 @@ figcaption {
 
   .hero {
     min-height: auto;
+    padding: clamp(3.5rem, 10vw, 5.5rem) 0 clamp(3.5rem, 9vw, 5rem);
   }
 
   .hero-inner {
-    transform: translateY(clamp(1rem, 4vh, 2rem));
+    transform: translateY(clamp(0.75rem, 3vh, 1.5rem));
   }
 
   .feature-release,
@@ -833,6 +858,11 @@ figcaption {
   .volume-grid,
   .story-grid {
     grid-template-columns: 1fr;
+  }
+
+  .volume-card img {
+    width: min(100%, 360px);
+    margin: 0 auto;
   }
 
   .book-meta {
@@ -850,31 +880,107 @@ figcaption {
   .gallery-grid .wide {
     grid-row: auto;
   }
+
+  .book-cover img {
+    width: min(100%, 420px);
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 620px) {
+  .site-header {
+    position: static;
+  }
+
   body::before {
-    background-size: 138vw auto;
-    opacity: 0.58;
+    background-position: center 9.5rem;
+    background-size: 132vw auto;
+    opacity: 0.5;
   }
 
   .brand {
     min-width: 0;
   }
 
+  .brand strong {
+    font-size: 1.04rem;
+  }
+
   .brand small {
     max-width: 220px;
+    font-size: 0.72rem;
+  }
+
+  .nav-actions {
+    gap: 0.45rem;
+  }
+
+  .nav-actions a {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0.7rem 0.5rem;
+    font-size: 0.84rem;
+  }
+
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .dropdown-menu a,
+  .dropdown-label {
+    white-space: normal;
+  }
+
+  .dropdown-subitems {
+    margin-left: 0.2rem;
+    padding-left: 0.45rem;
+  }
+
+  .hero {
+    padding: 2.6rem 0 3.2rem;
+  }
+
+  .hero-inner {
+    transform: none;
   }
 
   .hero-inner,
   .section,
   .feature-release,
+  .book-hero,
   .footer {
     width: min(100% - 24px, var(--max));
   }
 
   h1 {
-    font-size: clamp(3.2rem, 18vw, 5.4rem);
+    font-size: clamp(2.8rem, 16vw, 4.6rem);
+  }
+
+  h2 {
+    font-size: clamp(1.85rem, 10vw, 3.15rem);
+  }
+
+  .book-copy h1 {
+    font-size: clamp(2.65rem, 13.5vw, 4.2rem);
+  }
+
+  .lead {
+    font-size: clamp(1.24rem, 7vw, 1.8rem);
+  }
+
+  .section,
+  .feature-release,
+  .book-hero {
+    padding: 3.2rem 0;
+  }
+
+  .section-heading {
+    margin-bottom: 1.4rem;
   }
 
   .catalog-grid {
@@ -883,10 +989,43 @@ figcaption {
 
   .catalog-grid article {
     min-height: auto;
+    padding: 1.05rem;
+  }
+
+  .catalog-grid span {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .volume-card {
+    padding: 0.85rem;
+  }
+
+  .volume-card img,
+  .book-cover img {
+    width: min(100%, 320px);
+  }
+
+  .book-nav {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .book-link {
+    width: 100%;
   }
 
   .gallery-grid img {
-    min-height: 280px;
+    min-height: 0;
+    aspect-ratio: 2 / 3;
+    object-fit: contain;
+    background: #050504;
+  }
+
+  .updates-list article,
+  .story-panel,
+  .book-meta div {
+    padding: 0.95rem;
   }
 
   .footer,
