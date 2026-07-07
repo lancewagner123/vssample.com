@@ -114,6 +114,15 @@ a {
   min-width: 215px;
 }
 
+.brand-logo {
+  display: block;
+  width: clamp(176px, 18vw, 252px);
+  height: 58px;
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.68));
+}
+
 .brand strong,
 .footer strong {
   display: block;
@@ -841,6 +850,11 @@ figcaption {
     width: 100%;
   }
 
+  .brand-logo {
+    width: clamp(164px, 34vw, 224px);
+    height: 48px;
+  }
+
   .nav-links {
     flex: 0 0 auto;
     width: 100%;
@@ -959,6 +973,11 @@ figcaption {
   .brand {
     width: auto;
     min-width: 0;
+  }
+
+  .brand-logo {
+    width: clamp(132px, 42vw, 166px);
+    height: 38px;
   }
 
   .brand strong {
