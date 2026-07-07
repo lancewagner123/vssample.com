@@ -451,6 +451,31 @@ h1.lead {
   gap: 1rem;
 }
 
+.series-map-feature {
+  margin: 0 0 1.1rem;
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.34);
+}
+
+.series-map-feature img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+}
+
+.series-map-feature figcaption {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.volume-link-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .volume-card {
   display: flex;
   flex-direction: column;
@@ -469,6 +494,10 @@ h1.lead {
   object-fit: contain;
   border: 1px solid var(--line);
   background: #050504;
+}
+
+.volume-card--text {
+  min-height: 100%;
 }
 
 .volume-card > div {
@@ -724,6 +753,12 @@ figcaption {
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.62);
 }
 
+.book-cover.map-cover img {
+  width: min(100%, 680px);
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
 .book-copy h1 {
   font-size: clamp(3.4rem, 8vw, 7rem);
 }
@@ -869,6 +904,10 @@ figcaption {
   .volume-grid,
   .story-grid {
     grid-template-columns: 1fr;
+  }
+
+  .series-map-feature {
+    padding: 0.55rem;
   }
 
   .volume-card img {
