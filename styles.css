@@ -34,14 +34,23 @@ body {
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  left: 50%;
+  top: 48%;
+  width: min(980px, 92vw);
+  height: min(980px, 92vw);
   z-index: -2;
   background-image: url("images/original/owner-uploads/Veilied%20Studios%20Logo.png");
-  background-position: center 48%;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: min(980px, 92vw) auto;
+  background-size: contain;
   opacity: 0.72;
   filter: brightness(1.65) contrast(1.08);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  -webkit-mask-image: radial-gradient(circle at center, #000 0 56%, rgba(0, 0, 0, 0.92) 66%, rgba(0, 0, 0, 0.42) 82%, transparent 100%);
+  mask-image: radial-gradient(circle at center, #000 0 56%, rgba(0, 0, 0, 0.92) 66%, rgba(0, 0, 0, 0.42) 82%, transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
 
 body::after {
@@ -965,9 +974,11 @@ figcaption {
   }
 
   body::before {
-    background-position: center 6rem;
-    background-size: 132vw auto;
+    top: 6rem;
+    width: 132vw;
+    height: 132vw;
     opacity: 0.5;
+    transform: translateX(-50%);
   }
 
   .brand {
