@@ -256,6 +256,10 @@ a {
   transform: translateX(-50%);
 }
 
+.nav-dropdown:not([open]) .dropdown-menu {
+  display: none;
+}
+
 .nav-dropdown[open]::after {
   content: "";
   position: absolute;
@@ -798,6 +802,7 @@ figcaption {
   }
 
   .nav-links {
+    flex: 0 0 auto;
     width: 100%;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -818,6 +823,7 @@ figcaption {
   }
 
   .nav-actions {
+    flex: 0 0 auto;
     width: 100%;
     align-items: stretch;
     flex-wrap: wrap;
@@ -893,6 +899,7 @@ figcaption {
   }
 
   .nav {
+    position: relative;
     width: min(var(--max), calc(100% - 20px));
     min-height: 0;
     padding: 0.45rem 0 0.55rem;
@@ -923,14 +930,9 @@ figcaption {
     width: 100%;
     flex-wrap: nowrap;
     gap: 0;
-    overflow-x: auto;
+    overflow: visible;
     padding: 0.05rem 0 0.2rem;
-    font-size: 0.8rem;
-    scrollbar-width: none;
-  }
-
-  .nav-links::-webkit-scrollbar {
-    display: none;
+    font-size: 0.74rem;
   }
 
   .nav-links > a,
@@ -940,20 +942,20 @@ figcaption {
 
   .nav-links a,
   .nav-dropdown summary {
-    min-height: 28px;
+    min-height: 26px;
     white-space: nowrap;
   }
 
   .nav-links > a:not(:first-child),
   .nav-links > .nav-dropdown:not(:first-child) {
-    margin-left: 0.5rem;
-    padding-left: 0.62rem;
+    margin-left: 0.34rem;
+    padding-left: 0.42rem;
   }
 
   .nav-links > a:not(:first-child)::before,
   .nav-links > .nav-dropdown:not(:first-child)::before {
-    width: 0.2rem;
-    height: 0.2rem;
+    width: 0.18rem;
+    height: 0.18rem;
   }
 
   .nav-actions {
@@ -972,13 +974,23 @@ figcaption {
     font-size: 0.74rem;
   }
 
-  .nav-dropdown {
+  .nav-links > .nav-dropdown {
+    position: static;
     width: auto;
   }
 
   .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    left: 0;
     width: min(88vw, 320px);
     min-width: 0;
+    margin-top: 0;
+    transform: none;
+  }
+
+  .nav-dropdown[open]::after {
+    display: none;
   }
 
   .dropdown-menu a,
