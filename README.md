@@ -8,7 +8,6 @@ Static GitHub Pages-ready copy of the Veiled Studios sample site.
 2. Push the contents of this folder as the repository root.
 3. In GitHub, open Settings > Pages.
 4. Set source to `Deploy from a branch`, branch `main`, folder `/root`.
-5. Add `vssample.com` as the custom domain if it is not already detected from the `CNAME` file.
-6. Configure DNS for `vssample.com` with the GitHub Pages records.
+5. Use the free GitHub Pages URL: `https://lancewagner123.github.io/vssample.com/`.
 
-The `CNAME` file is already included for the custom domain.
+No custom domain is required for the free GitHub Pages setup.
