@@ -463,6 +463,117 @@ h1.lead {
   border-top: 1px solid var(--line);
 }
 
+.veil-vote {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  padding: clamp(1.1rem, 3vw, 1.6rem);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #0b0c0a;
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.36);
+}
+
+.veil-vote__intro {
+  max-width: 720px;
+}
+
+.veil-vote__intro h2 {
+  margin-bottom: 0.55rem;
+  font-size: clamp(1.8rem, 4vw, 3.1rem);
+}
+
+.veil-vote__intro p:last-child {
+  margin-bottom: 0;
+}
+
+.veil-vote__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.veil-vote fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #13140f;
+}
+
+.veil-vote legend {
+  padding: 0 0.35rem;
+  color: var(--gold-soft);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.vote-option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  margin-top: 0.8rem;
+  cursor: pointer;
+}
+
+.vote-option input {
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.22rem;
+  accent-color: var(--gold-soft);
+}
+
+.vote-option-card {
+  display: grid;
+  gap: 0.2rem;
+  min-height: 82px;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid #3f3826;
+  border-radius: 6px;
+  background: #1e180e;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.vote-option input:checked + .vote-option-card {
+  border-color: var(--gold-soft);
+  box-shadow: 0 0 0 2px rgba(241, 223, 160, 0.18);
+  transform: translateY(-1px);
+}
+
+.vote-option-card strong {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+}
+
+.vote-option-card small {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.veil-vote__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.veil-vote__actions .button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.vote-result {
+  min-height: 1.5rem;
+  margin: 0;
+  color: var(--gold-soft);
+  font-weight: 700;
+}
+
 .volume-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -925,6 +1036,7 @@ figcaption {
   }
 
   .volume-grid,
+  .veil-vote__grid,
   .story-grid {
     grid-template-columns: 1fr;
   }
@@ -1136,6 +1248,27 @@ figcaption {
 
   .volume-card {
     padding: 0.85rem;
+  }
+
+  .veil-vote {
+    padding: 1rem;
+  }
+
+  .veil-vote fieldset {
+    padding: 0.85rem;
+  }
+
+  .vote-option-card {
+    min-height: auto;
+  }
+
+  .veil-vote__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .veil-vote__actions .button {
+    width: 100%;
   }
 
   .volume-card img,

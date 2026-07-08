@@ -8,7 +8,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://lancewagner123.github.io/vssample.com/">
-  <link rel="stylesheet" href="styles.css?v=logo-polish-20260707">
+  <link rel="stylesheet" href="styles.css?v=volume-iv-vote-20260707">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -85,6 +85,67 @@
     </section>
 
     <section class="section series-overview" id="series" aria-labelledby="series-title">
+      <form class="veil-vote" data-veil-vote>
+        <div class="veil-vote__intro">
+          <p class="eyebrow">Reader vote</p>
+          <h2>The Veil - Who Leads Next?</h2>
+          <p>Vote for the character and destination in Volume IV.</p>
+        </div>
+        <div class="veil-vote__grid">
+          <fieldset>
+            <legend>Choose the lead</legend>
+            <label class="vote-option">
+              <input type="radio" name="character" value="Aric Veyne" required>
+              <span class="vote-option-card">
+                <strong>Aric Veyne</strong>
+                <small>The Veyrholm scout who first crossed the Miregate.</small>
+              </span>
+            </label>
+            <label class="vote-option">
+              <input type="radio" name="character" value="Vaelith Sorn" required>
+              <span class="vote-option-card">
+                <strong>Vaelith Sorn</strong>
+                <small>The dark elf watcher carrying a flame-touched blade.</small>
+              </span>
+            </label>
+            <label class="vote-option">
+              <input type="radio" name="character" value="Mara Slateward" required>
+              <span class="vote-option-card">
+                <strong>Mara Slateward</strong>
+                <small>The catacomb survivor who heard the Shattered Gate speak.</small>
+              </span>
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Choose the destination</legend>
+            <label class="vote-option">
+              <input type="radio" name="destination" value="The Umbral Cliffs" required>
+              <span class="vote-option-card">
+                <strong>The Umbral Cliffs</strong>
+                <small>Black stone overlooks where watchers mark every breach.</small>
+              </span>
+            </label>
+            <label class="vote-option">
+              <input type="radio" name="destination" value="Thornwake Swamp" required>
+              <span class="vote-option-card">
+                <strong>Thornwake Swamp</strong>
+                <small>A green-black maze where old paths move after sundown.</small>
+              </span>
+            </label>
+            <label class="vote-option">
+              <input type="radio" name="destination" value="The Shattered Gate" required>
+              <span class="vote-option-card">
+                <strong>The Shattered Gate</strong>
+                <small>The broken threshold beneath Slatewater Deep.</small>
+              </span>
+            </label>
+          </fieldset>
+        </div>
+        <div class="veil-vote__actions">
+          <button class="button primary" type="submit">Cast vote</button>
+          <p class="vote-result" data-vote-result aria-live="polite"></p>
+        </div>
+      </form>
       <div class="section-heading">
         <p class="eyebrow">The Veil series</p>
         <h2 id="series-title">Three immersive tomes to usher you behind the veil.</h2>
@@ -241,6 +302,6 @@
       <a href="mailto:authortraviswagner@gmail.com">Contact</a>
     </div>
   </footer>
-  <script src="main.js"></script>
+  <script src="main.js?v=volume-iv-vote-20260707"></script>
 </body>
 </html>
